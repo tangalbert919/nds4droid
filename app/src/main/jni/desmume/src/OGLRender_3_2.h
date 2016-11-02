@@ -20,7 +20,7 @@
 #ifndef OGLRENDER_3_2_H
 #define OGLRENDER_3_2_H
 
-#if defined(_WIN32) && !defined(WXPORT)
+#if defined(_WIN32)
 	#define WIN32_LEAN_AND_MEAN
 	#include <windows.h>
 	#include <GL/gl.h>
@@ -72,7 +72,7 @@ protected:
 	virtual Render3DError SetupShaderIO();
 	
 	virtual void GetExtensionSet(std::set<std::string> *oglExtensionSet);
-	virtual Render3DError EnableVertexAttributes(const VERTLIST *vertList, const GLushort *indexBuffer, const unsigned int vertIndexCount);
+	virtual Render3DError EnableVertexAttributes(const VERTLIST *vertList, const GLushort *indexBuffer, const size_t vertIndexCount);
 	virtual Render3DError DisableVertexAttributes();
 	virtual Render3DError SelectRenderingFramebuffer();
 	virtual Render3DError DownsampleFBO();
